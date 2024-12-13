@@ -22,3 +22,18 @@ let analyzeText (text: string): string =
         |> Seq.groupBy id
         |> Seq.map (fun (word, occurrences) -> word, Seq.length occurrences)
         |> Seq.sortByDescending snd
+
+ if Seq.isEmpty wordFrequency then
+        "No words found in the text."
+ else
+    let mostFrequentWord = Seq.head wordFrequency
+    let averageSentenceLength = 
+        if sentences.Length > 0 then 
+            float words.Length / float sentences.Length 
+        else 
+            0.0
+    let averageWordLength = 
+        if words.Length > 0 then 
+            float (words |> Seq.sumBy String.length) / float words.Length 
+        else 
+            0.0       
