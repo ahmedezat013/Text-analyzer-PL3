@@ -37,3 +37,24 @@ let analyzeText (text: string): string =
             float (words |> Seq.sumBy String.length) / float words.Length 
         else 
             0.0       
+// Updated sprintf with proper argument wrapping
+        sprintf """
+        
+Words: %d
+Sentences: %d
+Paragraphs: %d
+Most Frequent Word: %s (%d occurrences)
+Average Sentence Length: %.2f words
+Average Word Length: %.2f characters
+
+
+
+""" 
+            words.Length 
+            sentences.Length 
+            paragraphs.Length 
+            (fst mostFrequentWord) 
+            (snd mostFrequentWord) 
+            averageSentenceLength 
+            averageWordLength
+         
