@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0Windows</TargetFramework>
     <RootNamespace>Text_analyzer</RootNamespace>
 	  <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
