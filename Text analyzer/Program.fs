@@ -57,4 +57,12 @@ Average Word Length: %.2f characters
             (snd mostFrequentWord) 
             averageSentenceLength 
             averageWordLength
+
+// Event handler for the Load File button
+loadButton.Click.Add (fun _ ->
+    let openFileDialog = new OpenFileDialog(Filter = "Text Files|*.txt")
+    if openFileDialog.ShowDialog() = DialogResult.OK then
+        let fileContent = File.ReadAllText(openFileDialog.FileName)
+        textBox.Text <- fileContent
+)
          
