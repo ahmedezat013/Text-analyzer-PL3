@@ -65,4 +65,16 @@ loadButton.Click.Add (fun _ ->
         let fileContent = File.ReadAllText(openFileDialog.FileName)
         textBox.Text <- fileContent
 )
-         
+
+// Event handler for the Analyze Text button
+analyzeButton.Click.Add (fun _ ->
+    if String.IsNullOrWhiteSpace(textBox.Text) then
+        resultsLabel.Text <- "Please load a file or enter text before analyzing."
+    else
+        let analysis = analyzeText textBox.Text
+        resultsLabel.Text <- analysis
+)
+
+// Start the application
+[<STAThread>]
+Application.Run(form)
